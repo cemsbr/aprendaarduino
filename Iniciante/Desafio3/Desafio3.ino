@@ -34,4 +34,14 @@ void loop() {
   Serial.println(lumi); // escreve o valor da luminosidade lida na tela do computador
   delay(1000);
 
+  int soma = 0;
+  int cont;
+  for (cont = 0; cont < 50; cont++) {  // repete 50 vezes
+    soma = soma + analogRead(A1); // le o sensor analogico na porta A1 - escala de 0 a 1023
+  }
+  float tempC = (soma * 5.0 * 100 ) / ( 1023.0 * 50 );
+  Serial.print("Temperatura: "); // escreve a palavra "Temperatura: " no monitor do computador
+  Serial.print(tempC); // escreve o valor da temperatura lida na tela do computador
+  Serial.println(" C");
+  delay(1000);
 }

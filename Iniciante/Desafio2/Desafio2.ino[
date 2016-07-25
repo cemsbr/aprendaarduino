@@ -33,5 +33,4 @@ void loop() {
   Serial.print("Luminosidade: "); // escreve a palavra "Luminosidade: " no monitor do computador
   Serial.println(lumi); // escreve o valor da luminosidade lida na tela do computador
   delay(1000);
-
 }

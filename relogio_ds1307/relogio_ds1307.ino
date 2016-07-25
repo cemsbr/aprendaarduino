@@ -4,7 +4,8 @@
 #include <DS1307RTC.h>
 #include "jelly.h"
 #include "jelly_flip.h"
-#include "patinha.h"
+#include "pusheen2.h"
+#include "pusheen_flip2.h"
 
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NO_ACK);  // Display which does not send AC
 tmElements_t tm;
@@ -19,16 +20,21 @@ void setup() {
 }
 
 void draw(void) {
-  u8g.setFont(u8g_font_helvB18);
-  u8g.drawStr(0, 30, horaArray);
-  u8g.setFont(u8g_font_helvB12);
-  u8g.drawStr(0, 50, tempArray);
-  if (jelly){
+  if (flip == 2) {
+    u8g.setFont(u8g_font_helvB18);
+    u8g.drawStr(10, 30, horaArray);
+    u8g.setFont(u8g_font_helvB12);
+    u8g.drawStr(10, 50, tempArray);
+  } else {
+    if (jelly){
     if (flip) u8g.drawXBMP(128-jelly_width, 0, jelly_width, jelly_height, jelly_bits);
     else u8g.drawXBMP(128-jelly_flip_width, 0, jelly_flip_width, jelly_flip_height, jelly_flip_bits);
   } else {
-    u8g.drawXBMP(128-patinha_width, 0, patinha_width, patinha_height, patinha_bits);
+    if (flip) u8g.drawXBMP(128-pusheen_width, 0, pusheen_width, pusheen_height, pusheen_bits);
+    else u8g.drawXBMP(100-pusheen_flip_width, 0, pusheen_flip_width, pusheen_flip_height, pusheen_flip_bits);
   }
+  }
+  
   
 }
 
@@ -52,7 +58,8 @@ void loop() {
     draw();
   } while( u8g.nextPage() );
 
-  flip = !flip;
+  if (flip == 2) flip = 0;
+  else flip++;
 
   delay(10);
 
