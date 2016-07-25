@@ -20,7 +20,7 @@ void setup() {
 
 // a função loop() é executada para sempre:
 void loop() {
-  ddigitalWrite(11, HIGH);   // liga o LED (escreve o nível HIGH - 5V - no pino 11)
+  digitalWrite(11, HIGH);   // liga o LED (escreve o nível HIGH - 5V - no pino 11)
   digitalWrite(10, HIGH);   // liga o LED (escreve o nível HIGH - 5V - no pino 10)
   digitalWrite(9, HIGH);   // liga o LED (escreve o nível HIGH - 5V - no pino 9)
   delay(1000);              // espera 1 segundo = 1000 milisegundos
