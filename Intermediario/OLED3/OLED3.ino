@@ -9,6 +9,8 @@ char horaArray[10], tempArray[10]; // Estes vetores de caracteres serao utilizad
 
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NO_ACK);  // Declara o nosso display OLED.
 
+void draw();
+
 void setup() {
   Serial.begin(9600); // Inicializa comunicacao serial com o computador
   rtc.begin();        //  Inicializa comunicacao serial I2C com o RTC
