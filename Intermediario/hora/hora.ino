@@ -1,8 +1,8 @@
 #include <Sodaq_DS3231.h>
 
-int comprimento = 10; // Esta variavel sera utilizada mais tarde para dizer o comprimento dos nos nossos vetores
+const int comprimento = 10; // Esta constante sera utilizada mais tarde para dizer o comprimento dos nos nossos vetores
 String hora; // Esta string (uma sequencia especial de caracteres) sera utilizada para armazenar nosso horario
-char horaArray[10], tempArray[10]; // Estes vetores de caracteres serao utilizados para enviar texto ao Display pois nao eh possível enviar strings diretamente ;(
+char horaArray[comprimento], tempArray[comprimento]; // Estes vetores de caracteres serao utilizados para enviar texto ao Display pois nao eh possível enviar strings diretamente ;(
 
 
 void setup() {

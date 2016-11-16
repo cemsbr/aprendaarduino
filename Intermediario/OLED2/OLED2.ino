@@ -2,9 +2,9 @@
 #include "U8glib.h"
 
 
-int comprimento = 10; // Esta variavel sera utilizada mais tarde para dizer o comprimento dos nos nossos vetores
+const int comprimento = 10; // Esta constante sera utilizada mais tarde para dizer o comprimento dos nos nossos vetores
 String hora; // Esta string (uma sequencia especial de caracteres) sera utilizada para armazenar nosso horario
-char horaArray[10], tempArray[10]; // Estes vetores de caracteres serao utilizados para enviar texto ao Display pois nao eh possível enviar strings diretamente ;(
+char horaArray[comprimento], tempArray[comprimento]; // Estes vetores de caracteres serao utilizados para enviar texto ao Display pois nao eh possível enviar strings diretamente ;(
 
 U8GLIB_SSD1306_128X64 u8g(U8G_I2C_OPT_NO_ACK);  // Declara o nosso display OLED.
 
